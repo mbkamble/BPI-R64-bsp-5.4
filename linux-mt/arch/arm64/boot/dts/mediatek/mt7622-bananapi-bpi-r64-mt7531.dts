@@ -406,10 +406,10 @@
 		};
 	};
 
-	pwm7_pins: pwm1-2-pins {
+	pwm_pins: pwm1-pwm6-pins {
 		mux {
 			function = "pwm";
-			groups = "pwm_ch7_2";
+			groups = "pwm_ch1_2", "pwm_ch2_2", "pwm_ch3_2", "pwm_ch4_3", "pwm_ch5_2", "pwm_ch6_3"; /* GPIO 95..100 */
 		};
 	};
 
@@ -529,7 +529,7 @@
 
 &pwm {
 	pinctrl-names = "default";
-	pinctrl-0 = <&pwm7_pins>;
+	pinctrl-0 = <&pwm_pins>;
 	status = "okay";
 };
 

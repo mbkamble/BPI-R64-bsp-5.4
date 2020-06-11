@@ -3,7 +3,7 @@
 # Build script for BPI-M2U-BSP 2016.09.10
 
 TARGET_PRODUCT="bpi-r64"
-ALL_SOC="bpi-r64 bpi-r2"
+ALL_SOC="bpi-r64"
 BOARD=BPI-R64-console
 board="bpi-r64"
 kernel="5.4.0-BPI-R64-Kernel"
@@ -26,7 +26,7 @@ R="${SD}/BPI-ROOT"
 	#
 	rm -rf $SD
 	#
-	## create SD dirs (100MB, BPI-BOOT, BPI-ROOT) 
+	## create SD dirs (100MB, BPI-BOOT, BPI-ROOT)
 	#
 	mkdir -p $SD
 	mkdir -p $U
@@ -74,7 +74,7 @@ list_boards() {
 	for IN in ${ALL_SOC} ; do
 	(
 		if [ -d ${BPIPACK}/${BPISOC}/${IN}/configs ] ; then
-			cd ${BPIPACK}/${BPISOC}/${IN}/configs ; ls -1d BPI* 
+			cd ${BPIPACK}/${BPISOC}/${IN}/configs ; ls -1d BPI*
 		fi
 	)
 	done
@@ -116,8 +116,8 @@ fi
 echo -e "\033[31m Now building...\033[0m"
 echo
 case $mode in
-	1) RET=1;make && 
-	   make pack && 
+	1) RET=1;make &&
+	   make pack &&
 	   cp_download_files &&
            RET=0
            ;;
